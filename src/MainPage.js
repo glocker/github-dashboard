@@ -1,5 +1,6 @@
 import React from 'react'
 import ReposList from './ReposList';
+import SearchBar from './SearchBar';
 
 export default class MainPage extends React.Component {
 
@@ -8,7 +9,7 @@ export default class MainPage extends React.Component {
         return (
             <div>
                 <div>MainPage Component</div>
-                <div>SearchBar</div>
+                <SearchBar />
                 <ReposList />
             </div>
         )
