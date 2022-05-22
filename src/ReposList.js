@@ -5,7 +5,7 @@ export default function ReposList() {
     const [items, initItem] = useState([]);
 
     const fetchData = async () => {
-        const response = await fetch('https://api.github.com/users/glocker')
+        const response = await fetch('https://api.github.com/search/repositories?q=stars:>=10000&sort=stars&order=desc&per_page=10')
         if (!response.ok) {
             throw new Error('Data could not be fetched!')
         } else {
@@ -17,6 +17,7 @@ export default function ReposList() {
         fetchData()
             .then((res) => {
                 initItem(res)
+                console.log(res);
             })
             .catch((e) => {
                 console.log(e.message)
@@ -26,7 +27,7 @@ export default function ReposList() {
     return (
         <div>
             <div>Repositories list</div>
-            <div>{items.login}</div>
+            <div>{items.items.map(item => item.name)}</div>
         </div>
     )
 }
