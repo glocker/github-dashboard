@@ -1,0 +1,22 @@
+.Card-body {
+    display: flex;
+    justify-content: space-between;
+    height: 30vh;
+    width: 30vw;
+    background-color: lightgoldenrodyellow;
+    border: 1px solid dodgerblue;
+    border-radius: 5px;
+}
+
+.Card-header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px 5px 5px;
+    height: 5vh;
+}
+
+.Card-name {
+    font-size: 20px;
+}

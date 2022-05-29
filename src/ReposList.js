@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import Card from './Card';
 
 export default function ReposList() {
 
@@ -16,8 +17,8 @@ export default function ReposList() {
     useEffect(() => {
         fetchData()
             .then((res) => {
-                initItem(res)
-                console.log(res);
+                initItem(res.items)
+                console.log(res.items);
             })
             .catch((e) => {
                 console.log(e.message)
@@ -27,7 +28,7 @@ export default function ReposList() {
     return (
         <div>
             <div>Repositories list</div>
-            <div>{items.items.map(item => item.name)}</div>
+            <Card items={items} />
         </div>
     )
 }
